@@ -14,14 +14,18 @@ Take a look at the following code:
 7    console.log(x);
 ```
 
-Explain why line 4 and line 6 output different numbers.
+Explain why line 5 and line 7 output different numbers.
+
+Line 5 is within the function scope so when value of X is reassigned, 2 would be printed, if the function was ever called.
+
+Line 7 is has no access to the reassignment of X within the function scope, remains unchanged from initial assignment
 
 ## Question 2
 
 Take a look at the following code:
 
 ```
-let x = 10
+
 
 function f1()
 {
@@ -34,6 +38,10 @@ console.log(y)
 ```
 
 What will be the output of this code. Explain your answer in 50 words or less.
+
+X is declared in global scope, accessible inside the function 10 will print to console, when the function is called.
+
+Assignment of Y happens in function-scope, calls to the log OUTSIDE of that result in ref error
 
 ## Question 3
 
@@ -50,6 +58,10 @@ function f1(val) {
 f1(x);
 console.log(x);
 
+Calling f1 function with var X will add 1 to the  result, then will log output of initialization value of X
+
+Calling X
+
 const y = { x: 9 };
 
 function f2(val) {
@@ -62,3 +74,4 @@ console.log(y);
 ```
 
 What will be the output of this code. Explain your answer in 50 words or less.
+Both instances will output x as an object with value of 10
