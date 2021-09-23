@@ -15,7 +15,7 @@ function printReceipt(order) {
   console.log("QTY    ITEM                 TOTAL");
   order.forEach(item => {
     console.log(
-      `${item.quantity}      ${item.itemName}    ${item.quantity * item.unitPrice}`);
+      `${item.quantity}      ${item.itemName}    ${Number(item.quantity * item.unitPrice).toFixed(2)}`);
   });
   console.log(`\nTotal: `);
 }
