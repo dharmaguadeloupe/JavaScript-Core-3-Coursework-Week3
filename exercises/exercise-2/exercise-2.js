@@ -70,3 +70,15 @@ let hogwarts = [
     occupation: "Teacher",
   },
 ];
+
+const [firstName, lastName] = hogwarts;
+
+function displayNames(hogwarts) {
+  hogwarts.forEach(student => {
+    if(student.house.includes("Gryffindor")) {
+      console.log(`Hi, I go to Hogwarts School of Witchcraft and Wizardy. I'm ${student.firstName} ${student.lastName}, and I'm in Gryffindor. `);
+    }
+  });
+};
+
+displayNames(hogwarts);
