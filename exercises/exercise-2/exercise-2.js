@@ -71,7 +71,7 @@ let hogwarts = [
   },
 ];
 
-const [firstName, lastName, occupation] = hogwarts;
+let [firstName, lastName, occupation] = hogwarts;
 
 function displayNames(hogwarts) {
   hogwarts.forEach(student => {
@@ -85,12 +85,14 @@ function displayNames(hogwarts) {
 
 displayNames(hogwarts);
 
-//const [firstName, lastName, pet] = hogwarts;
+let [firstName, lastName, pet] = hogwarts;
 
 function teachersWithPets(hogwarts) {
   hogwarts.forEach(teacher => {
-    if(teacher.occupation === "teacher" && teacher.pet !== null) {
-      console.log(`Hi I'm ${teacher.firstName} ${teacher.lastName}`)
+    if(teacher.occupation === "Teacher" && teacher.pet !== null) {
+      console.log(`Hi I'm ${teacher.firstName} ${teacher.lastName} and I have a pet ${teacher.pet}.`)
     }
   })
 }
+
+teachersWithPets(hogwarts);
