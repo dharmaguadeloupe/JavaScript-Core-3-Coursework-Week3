@@ -71,14 +71,26 @@ let hogwarts = [
   },
 ];
 
-const [firstName, lastName] = hogwarts;
+const [firstName, lastName, occupation] = hogwarts;
 
 function displayNames(hogwarts) {
   hogwarts.forEach(student => {
-    if(student.house.includes("Gryffindor")) {
-      console.log(`Hi, I go to Hogwarts School of Witchcraft and Wizardy. I'm ${student.firstName} ${student.lastName}, and I'm in Gryffindor. `);
+    if(student.house.includes("Gryffindor") && student.occupation.includes("Student")) {
+      console.log(`Hi, I go to Hogwarts School of Witchcraft and Wizardy. I'm ${student.firstName} ${student.lastName}, and I'm in Gryffindor House. `);
+    } else if(student.house.includes("Gryffindor") && student.occupation.includes("Teacher")) {
+      console.log(`Hi, I teach at Hogwarts School of Witchcraft and Wizardy. I'm ${student.firstName} ${student.lastName}, and I was in Gryffindor House. `);
     }
   });
 };
 
 displayNames(hogwarts);
+
+//const [firstName, lastName, pet] = hogwarts;
+
+function teachersWithPets(hogwarts) {
+  hogwarts.forEach(teacher => {
+    if(teacher.occupation === "teacher" && teacher.pet !== null) {
+      console.log(`Hi I'm ${teacher.firstName} ${teacher.lastName}`)
+    }
+  })
+}
