@@ -7,17 +7,18 @@ let order = [
   { itemName: "Hash Brown", quantity: 4, unitPrice: 0.4 },
 ];
 
-let [itemName, quantity, unitPrice] = order;
-
-
-
 function printReceipt(order) {
-  console.log("QTY    ITEM                 TOTAL");
-  order.forEach(item => {
-    console.log(
-      `${item.quantity}      ${item.itemName}    ${Number(item.quantity * item.unitPrice).toFixed(2)}`);
+  console.log("QTY    ITEM   TOTAL");
+  let total = 0;
+
+  order.map((item) => {
+    let {quantity, itemName, unitPrice} = item;
+    let sum = quantity * unitPrice;   
+
+    console.log(`${quantity}      ${itemName}    ${Number(sum).toFixed(2)}`);
+    total +=sum;
   });
-  console.log(`\nTotal: `);
+  console.log(`Total: ${total}`);
 }
 
 printReceipt(order);
